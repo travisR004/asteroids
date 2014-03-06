@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Asteroids</title>
+</head>
+<body>
+    <canvas width="1000" height="900" style="background:url('http://www.thatsreallypossible.com/wp-content/uploads/2012/12/Space-Colonialisation.jpg')"></canvas>
+    <script src="inherits.js"></script>
+    <script src="keymaster.js"></script>
+    <script src="moving_object.js"></script>
+    <script src="asteroid.js"></script>
+    <script src="ship.js"></script>
+    <script src="bullet.js"></script>
+    <script src="game.js"></script>
+
+    <script>
+        var canvas = document.getElementsByTagName("canvas")[0];
+        new Asteroids.Game(canvas.getContext("2d")).start();
+    </script>
+</body>
+</html>
