@@ -1,5 +1,5 @@
 (function (root){
-    var Asteroids = root.Asteroids = ( root.Asteroids || {} );
+  var Asteroids = root.Asteroids = ( root.Asteroids || {} );
   Function.prototype.inherits = function (SuperClass) {
     // this is sublcass
     function Surrogate() {}

@@ -1,17 +1,11 @@
 (function(root) {
   var Asteroids = root.Asteroids = (root.Asteroids || {} );
 
-  var MovingObject = Asteroids.MovingObject = function(pos, vel, radius, color) {
-    //two element arrays.. vectors
+  var MovingObject = Asteroids.MovingObject = function(pos, vel, radius, color){
     this.pos = pos;
     this.vel = vel;
     this.radius = radius;
     this.color = color;
-  }
-
-  MovingObject.prototype.move = function(){
-    this.pos[0] += this.vel[0];
-    this.pos[1] += this.vel[1];
   }
 
   MovingObject.prototype.draw = function(ctx) {
@@ -19,9 +13,6 @@
     ctx.fillStyle = this.color;
     ctx.strokeStyle = "white";
     ctx.lineWidth = "2";
-
-
-
     ctx.arc(
       this.pos[0],
       this.pos[1],
@@ -32,7 +23,12 @@
     );
 
     ctx.fill();
-     ctx.stroke();
+    ctx.stroke();
+  }
+
+  MovingObject.prototype.move = function(){
+    this.pos[0] += this.vel[0];
+    this.pos[1] += this.vel[1];
   }
 
   MovingObject.prototype.isCollidedWith = function(otherObject) {

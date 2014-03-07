@@ -13,30 +13,6 @@
 
   Ship.inherits(Asteroids.MovingObject);
 
-  Ship.prototype.power = function(impulse){
-    if (this.vel[0] > MAX_VEL) {
-         this.vel[0] = MAX_VEL;
-       } else if (this.vel[0] < -MAX_VEL) {
-         this.vel[0] = -MAX_VEL;
-       } else {
-         this.vel[0] -= Math.cos(this.direction) * impulse;
-       }
-       if (this.vel[1] > MAX_VEL) {
-         this.vel[1] = MAX_VEL;
-       } else if (this.vel[1] < -MAX_VEL) {
-         this.vel[1] = -MAX_VEL;
-       } else {
-         this.vel[1] += Math.sin(this.direction) * impulse;
-       }
-     }
-
-  Ship.prototype.fireBullet = function(speed) {
-    var vel = [ Math.cos(this.direction) , -Math.sin(this.direction)]
-    var dir = [vel[0] * 13, vel[1] * 13];
-    var pos = [this.pos[0], this.pos[1]]
-    return new Asteroids.Bullet(pos, dir);
-  }
-
   Ship.prototype.draw = function (ctx) {
      ctx.beginPath();
      ctx.fillStyle = COLOR;
@@ -54,5 +30,27 @@
      ctx.stroke();
    };
 
+   Ship.prototype.fireBullet = function() {
+     var vel = [ Math.cos(this.direction) , -Math.sin(this.direction)]
+     var dir = [vel[0] * 13, vel[1] * 13];
+     var pos = [this.pos[0], this.pos[1]]
+     return new Asteroids.Bullet(pos, dir);
+   }
 
+  Ship.prototype.power = function(impulse){
+    if (this.vel[0] > MAX_VEL) {
+         this.vel[0] = MAX_VEL;
+       } else if (this.vel[0] < -MAX_VEL) {
+         this.vel[0] = -MAX_VEL;
+       } else {
+         this.vel[0] -= Math.cos(this.direction) * impulse;
+       }
+       if (this.vel[1] > MAX_VEL) {
+         this.vel[1] = MAX_VEL;
+       } else if (this.vel[1] < -MAX_VEL) {
+         this.vel[1] = -MAX_VEL;
+       } else {
+         this.vel[1] += Math.sin(this.direction) * impulse;
+       }
+     }
 }) (this)
