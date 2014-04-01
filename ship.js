@@ -1,9 +1,9 @@
 (function(root) {
   var Asteroids = root.Asteroids = (root.Asteroids || {});
 
-  var RADIUS = 15;
+  var RADIUS = 12;
   var COLOR = "green";
-  var MAX_VEL = 9;
+  var MAX_VEL = 5;
 
   var Ship = Asteroids.Ship = function(pos, vel) {
     this.direction = Math.PI / 2
@@ -53,4 +53,4 @@
          this.vel[1] += Math.sin(this.direction) * impulse;
        }
      }
-}) (this)
+})(this);

@@ -1,8 +1,8 @@
 (function(root) {
   var Asteroids = root.Asteroids = ( root.Asteroids || {} );
   var FPS = 30;
-  var DIM_X = 1000;
-  var DIM_Y = 900;
+  var DIM_X = 700;
+  var DIM_Y = 700;
   var buildAsteroids = 10;
   var score = 0;
 
@@ -30,8 +30,8 @@
   Game.prototype.bindKeyHandlers = function(){
     if(key.isPressed('up')){ this.ship.power(-0.5) };
     if(key.isPressed('down')){ this.ship.power(0.5) };
-    if(key.isPressed('right')) { this.ship.direction -= 0.12 };
-    if(key.isPressed('left')){ this.ship.direction += 0.12 };
+    if(key.isPressed('right')) { this.ship.direction -= 0.13 };
+    if(key.isPressed('left')){ this.ship.direction += 0.13 };
     if(key.isPressed('space')){ this.fireBullet() };
   }
 

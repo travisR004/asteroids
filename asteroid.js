@@ -2,8 +2,8 @@
   var Asteroids = root.Asteroids = (root.Asteroids || {});
 
   var COLOR = "black";
-  var RADIUS = 30;
-  var SPEED = 13;
+  var RADIUS = 25;
+  var SPEED = 15;
 
   var Asteroid = Asteroids.Asteroid = function(pos, vel, radius) {
     Asteroids.MovingObject.call(this, pos, vel,
@@ -24,4 +24,4 @@
     var startY = Math.random() * y;
     return [startX, startY];
   }
-})(this)
+})(this);
